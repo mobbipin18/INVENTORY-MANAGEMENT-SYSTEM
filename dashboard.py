@@ -1,7 +1,10 @@
 from tkinter import*
 from subprocess import call
 from PIL import Image, ImageTk
-from socialform import formclass1
+from instock import addclass
+from orderinv import classorder
+from releasestock import classrelease
+from socialform import classsocial
 
 
 class IMS:
@@ -35,13 +38,13 @@ class IMS:
         Button(self.menubar1,width=30,padx=10,pady=9,text='Social Media',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.socialform).place(x=0,y=0)
 
 
-        Button(self.menubar1,width=30,padx=10,pady=9,text='Adding Stocks',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0).place(x=0,y=50)
+        Button(self.menubar1,width=30,padx=10,pady=9,text='Adding Stocks',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.instock).place(x=0,y=50)
 
 
-        Button(self.menubar1,width=30,padx=10,pady=9,text='Order Inventory',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0).place(x=0,y=100)
+        Button(self.menubar1,width=30,padx=10,pady=9,text='Order Inventory',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.orderinv).place(x=0,y=100)
         
         
-        Button(self.menubar1,width=30,padx=10,pady=9,text='Release Stock',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0).place(x=0,y=150)
+        Button(self.menubar1,width=30,padx=10,pady=9,text='Release Stock',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.releasestock).place(x=0,y=150)
         
         #menubar upper
         self.menulogo=Image.open("D:\education\SOFTWARICA\INVENTORY\mainlogo1.png")
@@ -101,7 +104,19 @@ class IMS:
         
     def socialform(self):
         self.new_win=Toplevel(self.root)
-        self.new_obj=formclass1(self.new_win)
+        self.new_obj=classsocial(self.new_win)
+        
+    def orderinv(self):
+        self.new_win=Toplevel(self.root)
+        self.new_obj=classorder(self.new_win) 
+        
+    def releasestock(self):
+        self.new_win=Toplevel(self.root)
+        self.new_obj=classrelease(self.new_win)
+    
+    def instock(self):
+        self.new_win=Toplevel(self.root)
+        self.new_obj=addclass(self.new_win)  
         
 if __name__=="__main__":
     root=Tk()

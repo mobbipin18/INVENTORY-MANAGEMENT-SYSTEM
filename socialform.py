@@ -1,7 +1,7 @@
 from tkinter import*
 from subprocess import call
 from PIL import Image, ImageTk
-class formclass1:
+class classsocial:
     def __init__(self,root):
         self.root=root
         self.root.title("Adding Stock Form")
@@ -59,5 +59,5 @@ class formclass1:
         
 if __name__=="__main__":
     root=Tk()
-    obj=formclass1(root)
+    obj=classsocial(root)
     root.mainloop()

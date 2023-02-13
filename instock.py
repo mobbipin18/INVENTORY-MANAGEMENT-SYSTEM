@@ -1,7 +1,7 @@
 from tkinter import*
 from subprocess import call
 from PIL import Image, ImageTk
-class classrelease:
+class addclass:
     def __init__(self,root):
         self.root=root
         self.root.title("Adding Stock Form")
@@ -59,5 +59,5 @@ class classrelease:
         
 if __name__=="__main__":
     root=Tk()
-    obj=classrelease(root)
+    obj=addclass(root)
     root.mainloop()
