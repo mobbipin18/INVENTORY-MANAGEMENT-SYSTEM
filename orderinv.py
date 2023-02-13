@@ -11,7 +11,7 @@ class classorder:
         self.root.maxsize(600,750)
         self.root.focus_force()
         
-        self.tittlelabel=Label(self.root, text="SOCIAL MEDIA FORM", font=("Arial",33,"bold"),bg="#1c1c1c",fg="white")
+        self.tittlelabel=Label(self.root, text="Order Inventory Form", font=("Arial",33,"bold"),bg="#1c1c1c",fg="white")
         self.tittlelabel.pack(pady=30)
 
         self.ic=Label(self.root,text="Item code",font=('Arial',13,'bold'),bg="#1c1c1c",fg="white")

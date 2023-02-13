@@ -11,7 +11,7 @@ class addclass:
         self.root.maxsize(600,750)
         self.root.focus_force()
         
-        self.tittlelabel=Label(self.root, text="SOCIAL MEDIA FORM", font=("Arial",33,"bold"),bg="#1c1c1c",fg="white")
+        self.tittlelabel=Label(self.root, text="ADD STOCKS", font=("Arial",33,"bold"),bg="#1c1c1c",fg="white")
         self.tittlelabel.pack(pady=30)
 
         self.ic=Label(self.root,text="Item code",font=('Arial',13,'bold'),bg="#1c1c1c",fg="white")
@@ -29,29 +29,24 @@ class addclass:
         self.it=Entry(self.root,width=30,font=('Arial Bold)',13),bg="#1c1c1c",fg="white")
         self.it.place(x=160,y=313)
 
-        self.cn=Label(self.root, text="Customer Name", font=('Arial Bold)',13,'bold'),bg="#1c1c1c",fg="white")
-        self.cn.place(x=240,y=360)
-        self.cn=Entry(self.root,width=30,font=('Arial Bold)',13),bg="#1c1c1c",fg="white")
-        self.cn.place(x=160,y=390)
+        self.ip=Label(self.root, text="Item Price", font=('Arial Bold)',13,'bold'),bg="#1c1c1c",fg="white")
+        self.ip.place(x=240,y=360)
+        self.ip=Entry(self.root,width=30,font=('Arial Bold)',13),bg="#1c1c1c",fg="white")
+        self.ip.place(x=160,y=390)
 
-        self.cc=Label(self.root, text="Customer Contact", font=('Arial Bold)',13,'bold'),bg="#1c1c1c",fg="white")
-        self.cc.place(x=230,y=440)
-        self.cc=Entry(self.root,width=30,font=('Arial Bold)',13),bg="#1c1c1c",fg="white")
-        self.cc.place(x=160,y=470)
+        self.av=Label(self.root, text="Availability", font=('Arial Bold)',13,'bold'),bg="#1c1c1c",fg="white")
+        self.av.place(x=230,y=440)
+        self.av=Entry(self.root,width=30,font=('Arial Bold)',13),bg="#1c1c1c",fg="white")
+        self.av.place(x=160,y=470)
 
-        self.fb=Label(self.root, text="Followed By", font=('Arial Bold)',13,'bold'),bg="#1c1c1c",fg="white")
-        self.fb.place(x=255,y=520)
-        self.fb=Entry(self.root,width=30,font=('Arial Bold)',13),bg="#1c1c1c",fg="white")
-        self.fb.place(x=160,y=550)
-
-        self.s=Label(self.root, text="Status", font=('Arial Bold)',13,'bold'),bg="#1c1c1c",fg="white")
-        self.s.place(x=270,y=600)
-        self.s=Entry(self.root,width=30,font=('Arial Bold)',13),bg="#1c1c1c",fg="white")
-        self.s.place(x=160,y=630)
+        self.cp=Label(self.root, text="Cost production", font=('Arial Bold)',13,'bold'),bg="#1c1c1c",fg="white")
+        self.cp.place(x=230,y=520)
+        self.cp=Entry(self.root,width=30,font=('Arial Bold)',13),bg="#1c1c1c",fg="white")
+        self.cp.place(x=160,y=550)
 
         self.btn=Button(self.root, width=8,text='BACK',font=('Arial Bold)',13,'bold'),bg="#1c1c1c",fg="#FFF",cursor='hand2',command=self.back)
         self.btn.place(x=400,y=680)
-        self.btn=Button(self.root,width=8,text="SAVE",font=('Arial Bold)',13,'bold'),bg='#6e0211',fg='#FFF',cursor='hand2')
+        self.btn=Button(self.root,width=8,text="ADD",font=('Arial Bold)',13,'bold'),bg='#6e0211',fg='#FFF',cursor='hand2')
         self.btn.place(x=500,y=680)
     
     def back(self):
