@@ -3,7 +3,7 @@ from subprocess import call
 from PIL import Image, ImageTk
 from tkinter import ttk,messagebox
 import sqlite3
-class addclass:
+class socialclass:
     def __init__(self,root):
         self.root=root
         self.root.title("Social Media Form")
@@ -131,5 +131,5 @@ class addclass:
             
 if __name__=="__main__":
     root=Tk()
-    obj=addclass(root)
+    obj=socialclass(root)
     root.mainloop()
