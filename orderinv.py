@@ -4,7 +4,7 @@ from PIL import Image, ImageTk
 class classorder:
     def __init__(self,root):
         self.root=root
-        self.root.title("Adding Stock Form")
+        self.root.title("Order Inventory Form")
         self.root.config(bg="#1c1c1c")
         self.root.geometry("700x600+500+10")
         self.root.minsize(600,750)
