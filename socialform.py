@@ -3,7 +3,7 @@ from subprocess import call
 from PIL import Image, ImageTk
 from tkinter import ttk,messagebox
 import sqlite3
-class addclass:
+class socialclass:
     def __init__(self,root):
         self.root=root
         self.root.title("Social Media Form")
@@ -14,60 +14,53 @@ class addclass:
         self.root.focus_force()
 
         # giving variable for db
-        self.var_ic = StringVar()
-        self.var_itn = StringVar()
-        self.var_it = StringVar()
-        self.var_ip = StringVar()
-        self.var_avo = StringVar()
-        self.var_cp = StringVar()
+        self.var_ic1 = StringVar()
+        self.var_itn1 = StringVar()
+        self.var_cc = StringVar()
+        self.var_cn = StringVar()
+        self.var_fb = StringVar()
+        self.var_status = StringVar()
 
         # title label
         self.tittlelabel = Label(self.root, text="Social Media Form", font=("Arial", 33, "bold"), bg="#1c1c1c", fg="white")
         self.tittlelabel.pack(pady=30)
 
         # item code
-        self.ic = Label(self.root, text="Item code", font=('Arial', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.ic.place(x=260, y=120)
-        self.ic_entry = Entry(self.root, textvariable=self.var_ic, width=30, font=('Arial', 13), bg="#1c1c1c", fg="white")
-        self.ic_entry.place(x=160, y=150)
+        self.ic1 = Label(self.root, text="Item code", font=('Arial', 13, 'bold'), bg="#1c1c1c", fg="white")
+        self.ic1.place(x=260, y=120)
+        self.ic1_entry = Entry(self.root, textvariable=self.var_ic1, width=30, font=('Arial', 13), bg="#1c1c1c", fg="white")
+        self.ic1_entry.place(x=160, y=150)
 
         # item name
-        self.itn = Label(self.root, text="Item name", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.itn.place(x=260, y=200)
-        self.itn_entry = Entry(self.root, textvariable=self.var_itn, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
-        self.itn_entry.place(x=160, y=230)
+        self.itn1 = Label(self.root, text="Item name", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
+        self.itn1.place(x=260, y=200)
+        self.itn1_entry = Entry(self.root, textvariable=self.var_itn1, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
+        self.itn1_entry.place(x=160, y=230)
 
         # item type
-        self.it = Label(self.root, text="Item type", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.it.place(x=260, y=280)
-        self.it_entry = Entry(self.root, textvariable=self.var_it, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
-        self.it_entry.place(x=160, y=313)
+        self.cc = Label(self.root, text="Customer Conatact", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
+        self.cc.place(x=260, y=280)
+        self.cc_entry = Entry(self.root, textvariable=self.var_cc, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
+        self.cc_entry.place(x=160, y=313)
 
-        # item price
-        self.ip = Label(self.root, text="Customer Name", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.ip.place(x=240, y=360)
-        self.ip_entry = Entry(self.root, textvariable=self.var_ip, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
-        self.ip_entry.place(x=160, y=390)
+        # customer name
+        self.cn = Label(self.root, text="Customer Name", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
+        self.cn.place(x=240, y=360)
+        self.cn_entry = Entry(self.root, textvariable=self.var_cn, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
+        self.cn_entry.place(x=160, y=390)
         
 
-        # cost price
-        self.cp = Label(self.root, text="Followed By", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.cp.place(x=240, y=440)
-        self.cp_entry = Entry(self.root, textvariable=self.var_cp, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
-        self.cp_entry.place(x=160, y=470)
-        
+        # followed by
+        self.fb = Label(self.root, text="Followed By", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
+        self.fb.place(x=240, y=440)
+        self.fb_entry = Entry(self.root, textvariable=self.var_fb, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
+        self.fb_entry.place(x=160, y=470)
     
-        # # availability
-        # self.avo = Label(self.root, text="Followed By", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        # self.avo.place(x=230, y=440)
-        # self.avo_combo = ttk.Combobox(self.root, textvariable=self.var_avo, width=28, state="readonly", values=("SELECT", "STOCK AVAILABLE", "OUT OF STOCK", "ORDERED"),font=('Arial Bold)', 13), background="#1c1c1c", foreground="white")
-        # self.avo_combo.current(3)
-        # self.avo_combo.place(x=160, y=470)
 
-        # cost price
-        self.cp = Label(self.root, text="Cost Price", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.cp.place(x=240, y=520)
-        self.cp_entry = Entry(self.root, textvariable=self.var_cp, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
+        # status
+        self.status = Label(self.root, text="Status", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
+        self.status.place(x=240, y=520)
+        self.cp_entry = Entry(self.root, textvariable=self.var_status, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.cp_entry.place(x=160, y=550)
 
         # buttons
@@ -88,24 +81,24 @@ class addclass:
 
     def add_stock(self):
         # getting form data
-        ic = self.var_ic.get()
-        itn = self.var_itn.get()
-        it = self.var_it.get()
-        ip = self.var_ip.get()
-        avo = self.var_avo.get()
-        cp = self.var_cp.get()
+        ic1 = self.var_ic1.get()
+        itn1 = self.var_itn1.get()
+        cc = self.var_cc.get()
+        cn = self.var_cn.get()
+        fb = self.var_fb.get()
+        status = self.var_status.get()
 
-        if ic == '' or itn == '' or it == '' or ip == '' or avo == '' or cp == '':
+        if ic1 == '' or itn1 == '' or cc == '' or cn == '' or fb == '' or status == '':
             messagebox.showerror("Error", "All fields are required", parent=self.root)
         else:
             try:
                 # establishing connection with db
-                con = sqlite3.connect(database="ims.db")
+                con = sqlite3.connect(database="ims1.db")
                 cur = con.cursor()
 
                 # inserting values
-                cur.execute("insert into instock (item_code, item_name, item_type, item_price, availability, cost_price) values (?,?,?,?,?,?)", 
-                            (ic, itn, it, ip, avo, cp))
+                cur.execute("insert into socialform(item_code, item_name, customer_name, customer_contact, followed_by, status) values (?,?,?,?,?,?)", 
+                            (ic1, itn1, cc, cn, fb, status))
 
                 # saving data into db
                 con.commit()
@@ -117,12 +110,12 @@ class addclass:
 
 
     def clear(self):
-        self.var_ic.set('')
-        self.var_itn.set('')
-        self.var_it.set('')
-        self.var_ip.set('')
-        self.var_avo.set('')
-        self.var_cp.set('')
+        self.var_ic1.set('')
+        self.var_itn1.set('')
+        self.var_cc.set('')
+        self.var_cn.set('')
+        self.var_fb.set('')
+        self.var_status.set('')
 
     def exit(self):
         option = messagebox.askyesno("Confirm Exit", "Do you really want to exit?", parent=self.root)
@@ -131,5 +124,5 @@ class addclass:
             
 if __name__=="__main__":
     root=Tk()
-    obj=addclass(root)
+    obj=socialclass(root)
     root.mainloop()

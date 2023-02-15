@@ -6,6 +6,7 @@ from orderinv import classorder
 from releasestock import classrelease
 from socialform import socialclass
 from instocktree import adddbclass
+from socialformtree import socialdbclass
 
 
 
@@ -17,6 +18,7 @@ class IMS:
         self.root.title("INVENTORY MANAGEMENT PAGE")
         
         
+   
         #HEAD PART
         self.icon_title=PhotoImage(file=r"D:\education\SOFTWARICA\INVENTORY\mainlogo.png")
         title=Label(self.root, image=self.icon_title, text="HOME | INVENTORY MANAGEMENT SYSTEM", font=("ARIAL BOLD", 40), bg="#6e0211", compound="left", fg="white",height=60,anchor="w",padx=20).place(x=0,y=0,relwidth=5)
@@ -86,7 +88,7 @@ class IMS:
         stock=PhotoImage(file=r"D:\education\SOFTWARICA\INVENTORY\stock.png")
         stockbtn=Button(midbutton,image=stock,bd=0,cursor='hand2')
         stockbtn.place(x=900,y=90)
-        stocklbl=Label(midbutton, text="ADD STOCKS", font=("Arial Bold", 20), bg="#6e0211",  fg="white",height=1)
+        stocklbl=Button(midbutton, text="ADD STOCKS", font=("Arial Bold", 20), bg="#6e0211",  fg="white",height=1,command=self.socialformtree,cursor='hand2')
         stocklbl.place(x=970,y=375)
         
         
@@ -123,6 +125,10 @@ class IMS:
     def instocktree(self):
         self.new_win=Toplevel(self.root)
         self.new_obj=adddbclass(self.new_win) 
+        
+    def socialformtree(self):
+        self.new_win=Toplevel(self.root)
+        self.new_obj=socialdbclass(self.new_win)
         
 if __name__=="__main__":
     root=Tk()
