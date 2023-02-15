@@ -47,7 +47,7 @@ class IMS:
         
         Button(self.menubar1,width=30,padx=10,pady=9,text='Release Stock',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.releasestock).place(x=0,y=150)
         
-        #menubar upper
+        #menubar LOWER
         self.menulogo=Image.open("D:\education\SOFTWARICA\INVENTORY\mainlogo1.png")
         self.menulogo=self.menulogo.resize((300,250),Image.ANTIALIAS)
         self.menulogo=ImageTk.PhotoImage(self.menulogo)

@@ -53,7 +53,7 @@ class addclass:
         self.avo = Label(self.root, text="Availability", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
         self.avo.place(x=230, y=440)
         self.avo_combo = ttk.Combobox(self.root, textvariable=self.var_avo, width=28, state="readonly", values=("SELECT", "STOCK AVAILABLE", "OUT OF STOCK", "ORDERED"),font=('Arial Bold)', 13), background="#1c1c1c", foreground="white")
-        self.avo_combo.current(0)
+        self.avo_combo.current(3)
         self.avo_combo.place(x=160, y=470)
 
         # cost price
