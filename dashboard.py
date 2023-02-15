@@ -4,8 +4,9 @@ from PIL import Image, ImageTk
 from instock import addclass
 from orderinv import classorder
 from releasestock import classrelease
-from socialform import classsocial
+from socialform import socialclass
 from instocktree import adddbclass
+
 
 
 class IMS:
@@ -47,7 +48,7 @@ class IMS:
         
         Button(self.menubar1,width=30,padx=10,pady=9,text='Release Stock',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.releasestock).place(x=0,y=150)
         
-        #menubar LOWER
+        #menubar upper
         self.menulogo=Image.open("D:\education\SOFTWARICA\INVENTORY\mainlogo1.png")
         self.menulogo=self.menulogo.resize((300,250),Image.ANTIALIAS)
         self.menulogo=ImageTk.PhotoImage(self.menulogo)
@@ -105,7 +106,7 @@ class IMS:
         
     def socialform(self):
         self.new_win=Toplevel(self.root)
-        self.new_obj=classsocial(self.new_win)
+        self.new_obj=socialclass(self.new_win)
         
     def orderinv(self):
         self.new_win=Toplevel(self.root)
@@ -127,3 +128,4 @@ if __name__=="__main__":
     root=Tk()
     obj=IMS(root)
     root.mainloop()
+    
