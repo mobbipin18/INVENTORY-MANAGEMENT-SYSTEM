@@ -14,9 +14,13 @@ class adddbclass:
         self.root.focus_force()
         
         
+        #----------SEARCH BAR-----------------
+        code= Entry(self.root,width=50,fg='black',border=0,bg="white",font=('Microsoft YaHei UI Light',15))
+        code.place(x=450,y=15)
+        code.insert(0,'Search order inventory')
         #fillings ---------------------------
         instock_frame=Frame(self.root,bd=3,relief=RIDGE)
-        instock_frame.place(x=0,y=20,relwidth=1,height=150)
+        instock_frame.place(x=0,y=50,relwidth=1,height=150)
         
         scrolly=Scrollbar(instock_frame,orient=VERTICAL)
         scrollx=Scrollbar(instock_frame,orient=HORIZONTAL)
