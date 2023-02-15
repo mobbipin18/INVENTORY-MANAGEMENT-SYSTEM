@@ -107,6 +107,7 @@ class addclass:
             except Exception as ex:
                 messagebox.showerror("Error", f"Error due to {str(ex)}", parent=self.root)
 
+
     def clear(self):
         self.var_ic.set('')
         self.var_itn.set('')

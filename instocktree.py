@@ -3,7 +3,7 @@ from subprocess import call
 from PIL import Image, ImageTk
 from tkinter import ttk,messagebox
 import sqlite3
-from instock import addclass
+
 
 class adddbclass:
     def __init__(self,root):
@@ -46,6 +46,21 @@ class adddbclass:
         
         scrollx.config(command=self.instocktable.xview)
         scrolly.config(command=self.instocktable.yview)
+        
+        self.show()
+        
+    def show(self):
+        con = sqlite3.connect(database="ims.db")
+        cur = con.cursor()
+        try:
+            cur.execute("select * from instock")
+            rows=cur.fetchall()
+            self.instocktable.delete(*self.instocktable.get_children())
+            for row in rows:
+                self.instocktable.insert('',END,values=row)
+            
+        except Exception as ex:
+            messagebox.showerror("Error", f"Error due to {str(ex)}", parent=self.root)
         
 if __name__=="__main__":
     root=Tk()
