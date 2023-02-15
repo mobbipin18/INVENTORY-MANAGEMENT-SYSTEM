@@ -1,7 +1,12 @@
 from tkinter import*
 from subprocess import call
 from PIL import Image, ImageTk
-from socialform import formclass1
+from instock import addclass
+from orderinv import classorder
+from releasestock import classrelease
+from socialform import socialclass
+from instocktree import adddbclass
+
 
 
 class IMS:
@@ -35,13 +40,13 @@ class IMS:
         Button(self.menubar1,width=30,padx=10,pady=9,text='Social Media',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.socialform).place(x=0,y=0)
 
 
-        Button(self.menubar1,width=30,padx=10,pady=9,text='Adding Stocks',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0).place(x=0,y=50)
+        Button(self.menubar1,width=30,padx=10,pady=9,text='Adding Stocks',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.instock).place(x=0,y=50)
 
 
-        Button(self.menubar1,width=30,padx=10,pady=9,text='Order Inventory',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0).place(x=0,y=100)
+        Button(self.menubar1,width=30,padx=10,pady=9,text='Order Inventory',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.orderinv).place(x=0,y=100)
         
         
-        Button(self.menubar1,width=30,padx=10,pady=9,text='Release Stock',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0).place(x=0,y=150)
+        Button(self.menubar1,width=30,padx=10,pady=9,text='Release Stock',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.releasestock).place(x=0,y=150)
         
         #menubar upper
         self.menulogo=Image.open("D:\education\SOFTWARICA\INVENTORY\mainlogo1.png")
@@ -72,10 +77,10 @@ class IMS:
         
         #imageno1
         social=PhotoImage(file=r"D:\education\SOFTWARICA\INVENTORY\stock.png")
-        socialbtn=Button(midbutton,image=social,bd=0,cursor='hand2',command=self.socialform)
+        socialbtn=Button(midbutton,image=social,bd=0,cursor='hand2',command=self.instocktree)
         socialbtn.place(x=300,y=500)
-        sociallbl=Label(midbutton, text="SOCIAL MEDIA", font=("Arial Bold", 20), bg="#6e0211",  fg="white",height=1)
-        sociallbl.place(x=370,y=375)
+        sociallbl1=Button(midbutton, text="SOCIAL MEDIA", font=("Arial Bold", 20), bg="#6e0211",  fg="white",height=1,command=self.instocktree)
+        sociallbl1.place(x=370,y=375)
         
         #imageno2
         stock=PhotoImage(file=r"D:\education\SOFTWARICA\INVENTORY\stock.png")
@@ -101,9 +106,26 @@ class IMS:
         
     def socialform(self):
         self.new_win=Toplevel(self.root)
-        self.new_obj=formclass1(self.new_win)
+        self.new_obj=socialclass(self.new_win)
+        
+    def orderinv(self):
+        self.new_win=Toplevel(self.root)
+        self.new_obj=classorder(self.new_win) 
+        
+    def releasestock(self):
+        self.new_win=Toplevel(self.root)
+        self.new_obj=classrelease(self.new_win)
+    
+    def instock(self):
+        self.new_win=Toplevel(self.root)
+        self.new_obj=addclass(self.new_win) 
+        
+    def instocktree(self):
+        self.new_win=Toplevel(self.root)
+        self.new_obj=adddbclass(self.new_win) 
         
 if __name__=="__main__":
     root=Tk()
     obj=IMS(root)
     root.mainloop()
+    

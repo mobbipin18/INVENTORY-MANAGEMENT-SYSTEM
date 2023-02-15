@@ -6,7 +6,7 @@ import sqlite3
 class addclass:
     def __init__(self,root):
         self.root=root
-        self.root.title("Social Media Form")
+        self.root.title("Adding Stock Form")
         self.root.config(bg="#1c1c1c")
         self.root.geometry("700x600+500+10")
         self.root.minsize(600,750)
@@ -22,7 +22,7 @@ class addclass:
         self.var_cp = StringVar()
 
         # title label
-        self.tittlelabel = Label(self.root, text="Social Media Form", font=("Arial", 33, "bold"), bg="#1c1c1c", fg="white")
+        self.tittlelabel = Label(self.root, text="ADD STOCKS", font=("Arial", 33, "bold"), bg="#1c1c1c", fg="white")
         self.tittlelabel.pack(pady=30)
 
         # item code
@@ -44,25 +44,17 @@ class addclass:
         self.it_entry.place(x=160, y=313)
 
         # item price
-        self.ip = Label(self.root, text="Customer Name", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
+        self.ip = Label(self.root, text="Item Price", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
         self.ip.place(x=240, y=360)
         self.ip_entry = Entry(self.root, textvariable=self.var_ip, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.ip_entry.place(x=160, y=390)
-        
 
-        # cost price
-        self.cp = Label(self.root, text="Followed By", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.cp.place(x=240, y=440)
-        self.cp_entry = Entry(self.root, textvariable=self.var_cp, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
-        self.cp_entry.place(x=160, y=470)
-        
-    
-        # # availability
-        # self.avo = Label(self.root, text="Followed By", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        # self.avo.place(x=230, y=440)
-        # self.avo_combo = ttk.Combobox(self.root, textvariable=self.var_avo, width=28, state="readonly", values=("SELECT", "STOCK AVAILABLE", "OUT OF STOCK", "ORDERED"),font=('Arial Bold)', 13), background="#1c1c1c", foreground="white")
-        # self.avo_combo.current(3)
-        # self.avo_combo.place(x=160, y=470)
+        # availability
+        self.avo = Label(self.root, text="Availability", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
+        self.avo.place(x=230, y=440)
+        self.avo_combo = ttk.Combobox(self.root, textvariable=self.var_avo, width=28, state="readonly", values=("SELECT", "STOCK AVAILABLE", "OUT OF STOCK", "ORDERED"),font=('Arial Bold)', 13), background="#1c1c1c", foreground="white")
+        self.avo_combo.current(3)
+        self.avo_combo.place(x=160, y=470)
 
         # cost price
         self.cp = Label(self.root, text="Cost Price", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
