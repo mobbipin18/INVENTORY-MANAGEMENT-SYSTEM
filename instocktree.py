@@ -58,9 +58,9 @@ class adddbclass:
         cur = con.cursor()
         try:
             cur.execute("select * from instock")
-            rows=cur.fetchall()
+            rows1=cur.fetchall()
             self.instocktable.delete(*self.instocktable.get_children())
-            for row in rows:
+            for row in rows1:
                 self.instocktable.insert('',END,values=row)
             
         except Exception as ex:
