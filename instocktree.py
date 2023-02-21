@@ -10,7 +10,7 @@ class adddbclass:
         self.root=root
         self.root.title("INSTOCK DATAS")
         self.root.config(bg="#1c1c1c")
-        self.root.geometry("700x200")
+        self.root.geometry("1400x200+60+200")
         self.root.focus_force()
         
         
@@ -35,7 +35,7 @@ class adddbclass:
         self.instocktable.heading("it",text="ITEM TYPE")
         self.instocktable.heading("ip",text="ITEM PRICE")
         self.instocktable.heading("av",text="ITEM AVAILABILITY")
-        self.instocktable.heading("cp",text="COST PRODUCTION")
+        self.instocktable.heading("cp",text="COST PRICE")
         self.instocktable["show"]="headings"
         
         self.instocktable.column("ic",width=100)

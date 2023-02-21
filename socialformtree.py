@@ -8,54 +8,60 @@ import sqlite3
 class socialdbclass:
     def __init__(self,root):
         self.root=root
-        self.root.title("SOCIAL FORM DATAS")
+        self.root.title("SOCIAL MEDIA DATA")
         self.root.config(bg="#1c1c1c")
-        self.root.geometry("700x200")
+        self.root.geometry("1400x200+60+200")
         self.root.focus_force()
         
         
+        #----------SEARCH BAR-----------------
+        code= Entry(self.root,width=50,fg='black',border=0,bg="white",font=('Microsoft YaHei UI Light',15))
+        code.place(x=450,y=15)
+        code.insert(0,'Search order inventory')
         #fillings ---------------------------
-        socialform_frame=Frame(self.root,bd=3,relief=RIDGE)
-        socialform_frame.place(x=0,y=50,relwidth=1,height=150)
+        socialmedia_frame=Frame(self.root,bd=3,relief=RIDGE)
+        socialmedia_frame.place(x=0,y=50,relwidth=1,height=150)
         
-        scrolly=Scrollbar(socialform_frame,orient=VERTICAL)
-        scrollx=Scrollbar(socialform_frame,orient=HORIZONTAL)
+        scrolly=Scrollbar(socialmedia_frame,orient=VERTICAL)
+        scrollx=Scrollbar(socialmedia_frame,orient=HORIZONTAL)
         scrollx.pack(side=BOTTOM,fill=X)
         scrolly.pack(side=RIGHT,fill=Y)
-        
-        self.instocktable=ttk.Treeview(socialform_frame,columns=("ic1", "itn1", "cc", "cn", "fb", "status"),yscrollcommand=scrolly.set,xscrollcommand=scrollx.set)
-        self.instocktable.heading("ic1",text="ITEM CODE")
-        self.instocktable.heading("itn1",text="ITEM NAME")
-        self.instocktable.heading("cc",text="CUSTOMER CONTACT")
-        self.instocktable.heading("cn",text="CUSTOMER NAME")
-        self.instocktable.heading("fb",text="FOLLOWED BY")
-        self.instocktable.heading("status",text="STATUS")
-        self.instocktable["show"]="headings"
-        
-        self.instocktable.column("ic1",width=100)
-        self.instocktable.column("itn1",width=100)
-        self.instocktable.column("cc",width=150)
-        self.instocktable.column("cn",width=100)
-        self.instocktable.column("fb",width=200)
-        self.instocktable.column("status",width=100)
+
         
         
-        self.instocktable.pack(fill=BOTH,expand=1)
+        self.socialmediatable=ttk.Treeview(socialmedia_frame,columns=("ic1", "it1", "cc", "cn", "fb", "status"),yscrollcommand=scrolly.set,xscrollcommand=scrollx.set)
+        self.socialmediatable.heading("ic1",text="ITEM CODE")
+        self.socialmediatable.heading("it1",text="ITEM NAME")
+        self.socialmediatable.heading("cc",text="CUSTOMER CONTACT")
+        self.socialmediatable.heading("cn",text="CUSTOMER NAME")
+        self.socialmediatable.heading("fb",text="FOLLOWED BY")
+        self.socialmediatable.heading("status",text="STATUS")
+        self.socialmediatable["show"]="headings"
         
-        scrollx.config(command=self.instocktable.xview)
-        scrolly.config(command=self.instocktable.yview)
+        self.socialmediatable.column("ic1",width=100)
+        self.socialmediatable.column("it1",width=100)
+        self.socialmediatable.column("cc",width=150)
+        self.socialmediatable.column("cn",width=100)
+        self.socialmediatable.column("fb",width=200)
+        self.socialmediatable.column("status",width=100)
+        
+        
+        self.socialmediatable.pack(fill=BOTH,expand=1)
+        
+        scrollx.config(command=self.socialmediatable.xview)
+        scrolly.config(command=self.socialmediatable.yview)
         
         self.show()
         
     def show(self):
-        con = sqlite3.connect(database="ims.db")
+        con = sqlite3.connect(database="ims1.db")
         cur = con.cursor()
         try:
-            cur.execute("select * from ")
+            cur.execute("select * from socialform")
             rows1=cur.fetchall()
-            self.instocktable.delete(*self.instocktable.get_children())
+            self.socialmediatable.delete(*self.socialmediatable.get_children())
             for row in rows1:
-                self.instocktable.insert('',END,values=row)
+                self.socialmediatable.insert('',END,values=row)
             
         except Exception as ex:
             messagebox.showerror("Error", f"Error due to {str(ex)}", parent=self.root)

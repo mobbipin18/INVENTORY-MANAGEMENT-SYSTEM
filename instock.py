@@ -39,26 +39,26 @@ class addclass:
 
         # item type
         self.it = Label(self.root, text="Item type", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.it.place(x=260, y=280)
+        self.it.place(x=264, y=280)
         self.it_entry = Entry(self.root, textvariable=self.var_it, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.it_entry.place(x=160, y=313)
 
         # item price
-        self.ip = Label(self.root, text="Item Price", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.ip.place(x=240, y=360)
+        self.ip = Label(self.root, text="Item price", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
+        self.ip.place(x=259, y=360)
         self.ip_entry = Entry(self.root, textvariable=self.var_ip, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.ip_entry.place(x=160, y=390)
 
         # availability
         self.avo = Label(self.root, text="Availability", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.avo.place(x=230, y=440)
+        self.avo.place(x=258, y=440)
         self.avo_combo = ttk.Combobox(self.root, textvariable=self.var_avo, width=28, state="readonly", values=("SELECT", "STOCK AVAILABLE", "OUT OF STOCK", "ORDERED"),font=('Arial Bold)', 13), background="#1c1c1c", foreground="white")
         self.avo_combo.current(3)
         self.avo_combo.place(x=160, y=470)
 
         # cost price
         self.cp = Label(self.root, text="Cost Price", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.cp.place(x=240, y=520)
+        self.cp.place(x=258, y=520)
         self.cp_entry = Entry(self.root, textvariable=self.var_cp, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.cp_entry.place(x=160, y=550)
 

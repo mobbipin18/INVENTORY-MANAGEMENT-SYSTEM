@@ -37,9 +37,9 @@ class socialclass:
         self.itn1_entry = Entry(self.root, textvariable=self.var_itn1, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.itn1_entry.place(x=160, y=230)
 
-        # item type
-        self.cc = Label(self.root, text="Customer Conatact", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.cc.place(x=260, y=280)
+        # customer contact
+        self.cc = Label(self.root, text="Customer Contact", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
+        self.cc.place(x=228, y=280)
         self.cc_entry = Entry(self.root, textvariable=self.var_cc, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.cc_entry.place(x=160, y=313)
 
@@ -52,14 +52,14 @@ class socialclass:
 
         # followed by
         self.fb = Label(self.root, text="Followed By", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.fb.place(x=240, y=440)
+        self.fb.place(x=252, y=440)
         self.fb_entry = Entry(self.root, textvariable=self.var_fb, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.fb_entry.place(x=160, y=470)
     
 
         # status
         self.status = Label(self.root, text="Status", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.status.place(x=240, y=520)
+        self.status.place(x=270, y=520)
         self.cp_entry = Entry(self.root, textvariable=self.var_status, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.cp_entry.place(x=160, y=550)
 

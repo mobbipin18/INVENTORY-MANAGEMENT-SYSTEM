@@ -6,7 +6,7 @@ import sqlite3
 class releaseform:
     def __init__(self,root):
         self.root=root
-        self.root.title("Social Media Form")
+        self.root.title("Release stock")
         self.root.config(bg="#1c1c1c")
         self.root.geometry("700x600+500+10")
         self.root.minsize(600,750)
@@ -22,44 +22,44 @@ class releaseform:
         self.var_remarks = StringVar()
 
         # title label
-        self.tittlelabel = Label(self.root, text="Social Media Form", font=("Arial", 33, "bold"), bg="#1c1c1c", fg="white")
+        self.tittlelabel = Label(self.root, text="Release stock", font=("Arial", 33, "bold"), bg="#1c1c1c", fg="white")
         self.tittlelabel.pack(pady=30)
 
         # Customer Name
         self.cn1 = Label(self.root, text="Customer Name", font=('Arial', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.cn1.place(x=260, y=120)
+        self.cn1.place(x=240, y=120)
         self.cn1_entry = Entry(self.root, textvariable=self.var_cn1, width=30, font=('Arial', 13), bg="#1c1c1c", fg="white")
         self.cn1_entry.place(x=160, y=150)
 
         # Customer Contact
         self.cc1 = Label(self.root, text="Customer Contact", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.cc1.place(x=260, y=200)
+        self.cc1.place(x=232, y=200)
         self.cc1_entry = Entry(self.root, textvariable=self.var_cc1, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.cc1_entry.place(x=160, y=230)
 
         # Item Code
         self.ic3 = Label(self.root, text="Item Code", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.ic3.place(x=260, y=280)
+        self.ic3.place(x=262, y=280)
         self.ic3_entry = Entry(self.root, textvariable=self.var_ic3, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.ic3_entry.place(x=160, y=313)
 
         # Quantity
         self.qty = Label(self.root, text="Quantity", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.qty.place(x=240, y=360)
+        self.qty.place(x=267, y=360)
         self.qty_entry = Entry(self.root, textvariable=self.var_qty, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.qty_entry.place(x=160, y=390)
         
 
         # Address
         self.add1 = Label(self.root, text="Address", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.add1.place(x=240, y=440)
+        self.add1.place(x=267, y=440)
         self.add1_entry = Entry(self.root, textvariable=self.var_add1, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.add1_entry.place(x=160, y=470)
     
 
         # remarks
         self.remarks = Label(self.root, text="Remarks", font=('Arial Bold)', 13, 'bold'), bg="#1c1c1c", fg="white")
-        self.remarks.place(x=240, y=520)
+        self.remarks.place(x=265, y=520)
         self.remarks_entry = Entry(self.root, textvariable=self.var_remarks, width=30, font=('Arial Bold)', 13), bg="#1c1c1c", fg="white")
         self.remarks_entry.place(x=160, y=550)
 

@@ -4,15 +4,17 @@ from tkinter import messagebox
 import ast
 import os
 
-root=Tk()
-root.geometry('925x500')
-root.title('Login')
-root.configure(bg='#36000b')
-root.minsize(925,500)
+w=Tk()
+w.geometry('925x500+295+120')
+w.title('INVENTORY MANAGEMENT SYSTEM')
+w.configure(bg='#36000b')
+w.minsize(925,500)
+w.resizable(0,0)
+
 
 
 def signin():
-    signin_win=Frame(root,width=925,height=500,bg='white')
+    signin_win=Frame(w,width=925,height=500,bg='white')
     signin_win.place(x=0,y=0)
     f1=Frame(signin_win,width=350,height=350,bg='white')
     f1.place(x=480,y=100)
@@ -21,7 +23,7 @@ def signin():
     img1 = ImageTk.PhotoImage(Image.open("signin.png"))
     Label(signin_win,image=img1,border=0,bg='white').place(x=50,y=50)
 
-    l2=Label(signin_win,text="Sign in",fg='#36000b',bg='white')
+    l2=Label(signin_win,text="LOG IN",fg='#36000b',bg='white')
     l2.config(font=('Microsoft YaHei UI Light',23, 'bold'))
     l2.place(x=600,y=60)
 
@@ -50,7 +52,7 @@ def signin():
             e2.insert(0,'Password')
 
     
-    e2 =Entry(f1,width=21,fg='black',border=0,bg='white')
+    e2 =Entry(f1,width=21,fg='black',border=0,bg='white',highlightthickness=0, relief=FLAT, show="*", insertbackground = '#6b6a69')
     e2.config(font=('Microsoft YaHei UI Light',11, ))
     e2.bind("<FocusIn>", on_enter)
     e2.bind("<FocusOut>", on_leave)
@@ -73,16 +75,14 @@ def signin():
         
         if key in r.keys() and value==r[key]:           
             messagebox.showinfo("","     successfully logged in    ")
-            root.destroy()
+            w.destroy()
             os.system("python dashboard.py")
-
-
         else:
             messagebox.showwarning('try again', 'invalid username or password')
 
 
     #------------------------------------------------------
-    Button(f1,width=39,pady=7,text='Sign in',bg='#36000b',fg='white',border=0,command=signin_cmd).place(x=35,y=204)
+    Button(f1,width=39,pady=7,text='Log in',bg='#36000b',fg='white',border=0,command=signin_cmd).place(x=35,y=204)
     l1=Label(f1,text="Don't have an account?",fg="black",bg='white')
     l1.config(font=('Microsoft YaHei UI Light',9, ))
     l1.place(x=75,y=250)
@@ -94,7 +94,7 @@ def signin():
 
 
 def signup():
-    signup_win=Frame(root,width=925,height=500,bg='white')
+    signup_win=Frame(w,width=925,height=500,bg='white')
     signup_win.place(x=0,y=0)
     f1=Frame(signup_win,width=350,height=350,bg='white')
     f1.place(x=480,y=70)
@@ -158,6 +158,9 @@ def signup():
 
     Frame(f1,width=295,height=2,bg='black').place(x=25,y=157+70)    
 
+    
+    #Mechenism------------------------------------------------
+    
     def signup_cmd():
         key=e1.get()
         value=e2.get()
@@ -177,8 +180,8 @@ def signup():
             file.truncate(0)
             file.close()
             print(r)
-            file=open('datasheet.txt','root')
-            root=file.write(str(r))
+            file=open('datasheet.txt','w')
+            w=file.write(str(r))
              
             messagebox.showinfo("","     successfully signed up     ")
             
@@ -197,4 +200,4 @@ def signup():
 
 signin() #default screen
 
-root.mainloop()
+w.mainloop()
