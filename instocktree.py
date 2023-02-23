@@ -12,12 +12,17 @@ class adddbclass:
         self.root.config(bg="#1c1c1c")
         self.root.geometry("700x200")
         self.root.focus_force()
-        
+
         
         #----------SEARCH BAR-----------------
-        code= Entry(self.root,width=50,fg='black',border=0,bg="white",font=('Microsoft YaHei UI Light',15))
-        code.place(x=450,y=15)
-        code.insert(0,'Search order inventory')
+        self.delete_label=Entry(self.root,width=15,fg='black',border=0,bg="white",font=('Arial',15))
+        self.delete_label.place(x=380,y=15)
+        
+        #Delete button
+        self.delete_btn = Button(self.root, text="DELETE", width=10, font=('Arial Bold)', 13), bg="#6e0211", 
+                              fg="white",command=self.delete)
+        self.delete_btn.place(x=550,y=15)
+        
         #fillings ---------------------------
         instock_frame=Frame(self.root,bd=3,relief=RIDGE)
         instock_frame.place(x=0,y=50,relwidth=1,height=150)
@@ -53,14 +58,29 @@ class adddbclass:
         
         self.show()
         
+        
+    
+    def delete(self):
+        con = sqlite3.connect(database="ims.db")
+        cur = con.cursor()
+        
+        con.execute("DELETE from instock WHERE item_code = "+ self.delete_label.get())
+        
+        self.delete_label.delete(0, END)
+        
+        con.commit()
+        con.close()
+        
+        self.show()
+        
     def show(self):
         con = sqlite3.connect(database="ims.db")
         cur = con.cursor()
         try:
             cur.execute("select * from instock")
-            rows=cur.fetchall()
+            rows1=cur.fetchall()
             self.instocktable.delete(*self.instocktable.get_children())
-            for row in rows:
+            for row in rows1:
                 self.instocktable.insert('',END,values=row)
             
         except Exception as ex:

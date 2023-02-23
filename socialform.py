@@ -14,7 +14,7 @@ class socialclass:
         self.root.focus_force()
 
         # giving variable for db
-        self.var_ic1 = StringVar()
+        self.var_ic1 = StringVar() 
         self.var_itn1 = StringVar()
         self.var_cc = StringVar()
         self.var_cn = StringVar()

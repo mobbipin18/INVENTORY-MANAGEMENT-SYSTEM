@@ -3,10 +3,12 @@ from subprocess import call
 from PIL import Image, ImageTk
 from instock import addclass
 from orderinv import classorder
-from releasestock import classrelease
+from releasestock import releaseform
 from socialform import socialclass
 from instocktree import adddbclass
 from socialformtree import socialdbclass
+import os
+from bill import billing
 
 
 
@@ -24,7 +26,7 @@ class IMS:
         title=Label(self.root, image=self.icon_title, text="HOME | INVENTORY MANAGEMENT SYSTEM", font=("ARIAL BOLD", 40), bg="#6e0211", compound="left", fg="white",height=60,anchor="w",padx=20).place(x=0,y=0,relwidth=5)
         
         #logout button
-        Button(self.root, width=15,pady=10,text='LOG OUT',font=('Joy multiplication',15),bg="#36000b", fg='white',border=1,padx=2,cursor="hand2").place(x=1600,height=60,y=2.5)
+        Button(self.root, width=15,pady=10,text='LOG OUT',font=('Joy multiplication',15),bg="#36000b", fg='white',border=1,padx=2,cursor="hand2",command=self.logout).place(x=1600,height=60,y=2.5)
         #header
         self.lbl_header=Label(self.root, text="You are in IMS : Team", font=("Arial Bold", 10), bg="#6e0211",  fg="white",height=60)
         self.lbl_header.place(x=0,y=70,relwidth=1,height=20)
@@ -57,7 +59,7 @@ class IMS:
         
         menubar2_selfmenulogo=Label(self.menubar2,image=self.menulogo)
         menubar2_selfmenulogo.pack(side=TOP)
-        Button(self.menubar2, width=30,padx=10,pady=9,text='Fun Zone',font=('Microsoft YaHei UI Light',14),bg="#1c1c1c",fg='white',border=0).place(x=0,y=320)
+        Button(self.menubar2, width=30,padx=10,pady=9,text='Billing Area',font=('Microsoft YaHei UI Light',14),bg="#1c1c1c",fg='white',border=0,command=self.bill).place(x=0,y=320)
 
         Button(self.menubar2, width=30,padx=10,pady=9,text='App Gallery',font=('Microsoft YaHei UI Light',14),bg="#1c1c1c",fg='white',border=0).place(x=0,y=370)
 
@@ -71,6 +73,14 @@ class IMS:
         
         #footer part
         self.lbl_footer=Label(self.root, text="DEVELOPED AND USED BY TEAM NAMED BDSM | THE INVENTORY MANAGEMENT SYSTEM | COPYRIGHT TO US ONLY", font=("ARIAL BOLD", 10), bg="#6e0211",  fg="white",height=1).pack(side=BOTTOM,fill=X)
+        
+        #------------------INFO PAGE
+        info= Frame(root,bg="#000")
+        info.place(x=305,y=100,width=1650,height=875)
+        
+        def info():
+            infohead=Label(info,text="HEllO YOU ARE ON INFO PAGE")
+            infohead.place(x=3,y=2)
         
         #middle button
         midbutton= Frame(root,bg="#000")
@@ -116,7 +126,7 @@ class IMS:
         
     def releasestock(self):
         self.new_win=Toplevel(self.root)
-        self.new_obj=classrelease(self.new_win)
+        self.new_obj=releaseform(self.new_win)
     
     def instock(self):
         self.new_win=Toplevel(self.root)
@@ -129,6 +139,14 @@ class IMS:
     def socialformtree(self):
         self.new_win=Toplevel(self.root)
         self.new_obj=socialdbclass(self.new_win)
+        
+    def bill(self):
+        self.new_win=Toplevel(self.root)
+        self.new_obj=billing(self.new_win)   
+        
+    def logout(self):
+        root.destroy()
+        os.system("python loginn.py")
         
 if __name__=="__main__":
     root=Tk()
