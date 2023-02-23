@@ -1,0 +1,1 @@
+{'inventorylogin': 'password', 'user': '123', 'user1': '1234', 'bipin': 'bipin123', 'manish': 'hero', 'manishhh': '1234', 'sauhardd': '1234', 'admin': 'admin1', 'new_admin': 'newadmin', 'IMSHEAD': 'imshead1', 'imshead': 'imshead1'}
