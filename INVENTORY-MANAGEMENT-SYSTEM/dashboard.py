@@ -49,24 +49,12 @@ class IMS:
         #menubar upper
         Button(self.menubar1,width=30,padx=10,pady=9,text='Adding Stocks',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.instock,cursor="hand2").place(x=0,y=0)
 
-
         Button(self.menubar1,width=30,padx=10,pady=9,text='Order Inventory',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.orderinv,cursor="hand2").place(x=0,y=50)
-
 
         Button(self.menubar1,width=30,padx=10,pady=9,text='Social Media',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.socialform,cursor="hand2").place(x=0,y=100)
         
-        
         Button(self.menubar1,width=30,padx=10,pady=9,text='Release Stock',font=('Microsoft YaHei UI Light',14),bg='#1c1c1c',fg='white',border=0,command=self.releasestock,cursor="hand2").place(x=0,y=150)
         
-        #menubar upper
-
-        # self.menulogo=Image.open("C:\\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\mainlogo1.png")
-        # self.menulogo=self.menulogo.resize((300,250),Image.ANTIALIAS)
-        # self.menulogo=ImageTk.PhotoImage(self.menulogo)
-        
-        # menubar2_selfmenulogo=Label(self.menubar2,image=self.menulogo)
-        # menubar2_selfmenulogo.pack(side=TOP)
-
         Button(self.menubar2, width=30,padx=10,pady=9,text='Billing Area',font=('Microsoft YaHei UI Light',14),bg="#1c1c1c",fg='white',border=0,cursor="hand2",command=self.bill).place(x=0,y=172)
 
         Button(self.menubar2, width=30,padx=10,pady=9,text='Calculator',font=('Microsoft YaHei UI Light',14),bg="#1c1c1c",fg='white',border=0,cursor="hand2",command=self.calcular).place(x=0,y=222)
@@ -78,14 +66,6 @@ class IMS:
         #footer part
         self.lbl_footer=Label(self.root, text="DEVELOPED AND USED BY TEAM NAMED BDSM | THE INVENTORY MANAGEMENT SYSTEM | COPYRIGHT TO US ONLY", font=("ARIAL BOLD", 10), bg="#6e0211",  fg="white",height=1).pack(side=BOTTOM,fill=X)
         
-        #------------------INFO PAGE
-        # info= Frame(root,bg="#000")
-        # info.place(x=305,y=220,width=1650,height=670)
-        
-        # def info():
-        #     infohead=Label(info,text="HEllO YOU ARE ON INFO PAGE")
-        #     infohead.place(x=3,y=2)
-        
         #middle button
         midbutton= Frame(root,bg="#000")
         midbutton.place(x=302,y=90,width=1400,height=680)
@@ -93,10 +73,9 @@ class IMS:
         heading=Label(midbutton,text="DATA BASE CENTER",bg="#000",fg="white",font=("Arial Bold", 25))
         heading.place(x=400,y=10)
 
-
         #imageno1
         # social=PhotoImage(file=r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\ADDING_STOCK.png")
-        self.addstock=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\INVENTORY-MANAGEMENT-SYSTEM\ADDING_STOCK.png")
+        self.addstock=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\ADDING_STOCK.png")
         self.addstock=self.addstock.resize((200,200),Image.ANTIALIAS)
         self.addstock=ImageTk.PhotoImage(self.addstock)
         addstock=Label(midbutton,image=self.addstock)
@@ -107,7 +86,7 @@ class IMS:
         sociallbl2.place(x=400,y=150)
 
         #imageno2
-        self.orderst=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\INVENTORY-MANAGEMENT-SYSTEM\ORDERING.png")
+        self.orderst=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\ORDERING.png")
         self.orderst=self.orderst.resize((200,200),Image.ANTIALIAS)
         self.orderst=ImageTk.PhotoImage(self.orderst)
         orderst=Label(midbutton,image=self.orderst)
@@ -117,9 +96,8 @@ class IMS:
         sociallbl3 = Label(midbutton, text="-Purchase order creation.\n -Record point setting.\n -Cost tracking and reporting.", bg="black", fg="white",anchor="w",font=("Arial bold", 10))
         sociallbl3.place(x=920,y=150)
         
-        
         #imageno3
-        self.socialst=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\INVENTORY-MANAGEMENT-SYSTEM\SOCIAL_MEDIA.png")
+        self.socialst=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\SOCIAL_MEDIA.png")
         self.socialst=self.socialst.resize((200,200),Image.ANTIALIAS)
         self.socialst=ImageTk.PhotoImage(self.socialst)
         socialst=Label(midbutton,image=self.socialst)
@@ -130,7 +108,7 @@ class IMS:
         sociallbl4.place(x=400,y=473)
 
         #imageno4
-        self.releasest=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\INVENTORY-MANAGEMENT-SYSTEM\RELEASESTOCK.png")
+        self.releasest=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\RELEASESTOCK.png")
         self.releasest=self.releasest.resize((200,200),Image.ANTIALIAS)
         self.releasest=ImageTk.PhotoImage(self.releasest)
         releasest=Label(midbutton,image=self.releasest)
