@@ -96,7 +96,7 @@ class IMS:
 
         #imageno1
         # social=PhotoImage(file=r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\ADDING_STOCK.png")
-        self.addstock=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\ADDING_STOCK.png")
+        self.addstock=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\INVENTORY-MANAGEMENT-SYSTEM\ADDING_STOCK.png")
         self.addstock=self.addstock.resize((200,200),Image.ANTIALIAS)
         self.addstock=ImageTk.PhotoImage(self.addstock)
         addstock=Label(midbutton,image=self.addstock)
@@ -107,7 +107,7 @@ class IMS:
         sociallbl2.place(x=400,y=150)
 
         #imageno2
-        self.orderst=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\ORDERING.png")
+        self.orderst=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\INVENTORY-MANAGEMENT-SYSTEM\ORDERING.png")
         self.orderst=self.orderst.resize((200,200),Image.ANTIALIAS)
         self.orderst=ImageTk.PhotoImage(self.orderst)
         orderst=Label(midbutton,image=self.orderst)
@@ -119,7 +119,7 @@ class IMS:
         
         
         #imageno3
-        self.socialst=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\SOCIAL_MEDIA.png")
+        self.socialst=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\INVENTORY-MANAGEMENT-SYSTEM\SOCIAL_MEDIA.png")
         self.socialst=self.socialst.resize((200,200),Image.ANTIALIAS)
         self.socialst=ImageTk.PhotoImage(self.socialst)
         socialst=Label(midbutton,image=self.socialst)
@@ -130,7 +130,7 @@ class IMS:
         sociallbl4.place(x=400,y=473)
 
         #imageno4
-        self.releasest=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\RELEASESTOCK.png")
+        self.releasest=Image.open(r"C:\Users\Acer\Documents\GitHub\INVENTORY-MANAGEMENT-SYSTEM\INVENTORY-MANAGEMENT-SYSTEM\RELEASESTOCK.png")
         self.releasest=self.releasest.resize((200,200),Image.ANTIALIAS)
         self.releasest=ImageTk.PhotoImage(self.releasest)
         releasest=Label(midbutton,image=self.releasest)
